@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<style>
+
+@font-face {
+
+font-family: 'RaceFont';
+src: url(RaceFont.otf) format('truetype');
+}
+
+body {
+
+background-color: black;
+
+
+}
+
+
+
+</style>
+
+<body onload="opacityStart()">
+
+
+
+<div id="WholeId" style="opacity: 0">
+
+<h1 style="position: relative; font-family: RaceFont; background: black; color: white; margin: auto; text-align: center; font-size: 300%; overflow: hidden;"><u>MOTORIDE</u></h1>
+
+<img src="First.png" width="100%" style="position: relative; top: 25px;">
+
+<p style="position: relative; color: white; font-size: 150%; text-align: center;">The Motorbike mod adds a powerful motorbike to the game, allowing players to navigate terrain at high speeds and explore the wilderness of Minecraft with a new level of excitement. So grab your helmet and get ready to hit the road!</p>
+
+<img src="Second.png" width="100%" style="position: relative; top: 25px;">
+
+
+<h1 style="position: relative; color: white; font-size: 170%; text-align: center; font-family: RaceFont; top: 25px"><u>MAKE IT WORK!</u></h1>
+
+<ul style="position: relative; color: white; font-size: 150%; text-align: center;">
+  <li>Enable experiments on in your game settings</li>
+  <li>Obtain the motorbike through one of the following methods:
+      <li>Use the command "/give @p pa:Motorbike" in the chat box</li>
+      <li>Grab the motorbike egg from the creative inventory</li>
+  </li>
+  <li>Note that the motorbike is only available in creative mode and cannot be obtained in survival mode</li>
+  <li>Switch to creative mode before attempting to get the motorbike.</li>
+</ul>
+
+
+<img src="Third.png" width="100%" style="position: relative; top: 25px;">
+
+
+
+<a href="Motorbike.zip" download="Motorbike Download"><img onclick="clickDown()" width="100%" style="position: relative; top: 25px; z-index: 2;" src="DownloadButton.png"></a>
+
+
+
+
+
+</div>
+
+<center>
+<img src="Fourth.png" width="50%" style="position: relative; top: 50px; opacity: 0" id="FourthId">
+</center>
+
+
+
+<img id="MotorideId" style="position: fixed; margin: auto; top: 35%; background-color: black; background-height: 100%; opacity: 1" src="Starting.gif" width="100%">
+
+<div style="opacity: 0" id="contact">
+
+<h1 style="position: relative; color: white; font-size: 170%; text-align: center; font-family: RaceFont; top: 25px"><u>CONTACT US</u></h1>
+
+<p style="position: relative; color: white; font-size: 150%; text-align: center;">Welcome to our Contact Us page! We are here to help and answer any questions you may have. You can reach us by phone at 000-0000-0000. Our customer service team is available Monday through Friday from 9am to 5pm EST. Alternatively, you can also send us an email at info@example.com and we will respond to you as soon as possible. We value your feedback and suggestions, so please don't hesitate to contact us with any concerns or inquiries. We look forward to hearing from you!</p>
+
+</div>
+
+
+
+</body>
+
+<script>
+
+
+var whole = document.getElementById("WholeId")
+
+var motor = document.getElementById("MotorideId")
+
+var four = document.getElementById("FourthId")
+
+var contacts = document.getElementById("contact")
+
+
+var number = 0
+
+var bikeSound = new Audio("MotorbikeSfk.mp3")
+
+
+
+
+
+async function opacityStart() {
+
+await new Promise(resolve => setTimeout(resolve, 2700));
+
+motor.style.opacity = 0
+
+for (var i = 0; i < 21; i++) {
+
+number += 0.05
+
+await new Promise(resolve => setTimeout(resolve, 50));
+
+document.getElementById("WholeId").style = "opacity: " + number
+
+document.getElementById("FourthId").style = "position: relative; top: 50px; opacity: " + number
+
+document.getElementById("contact").style = "opacity: " + number
+
+
+
+}
+
+}
+
+
+opacityStart()
+
+
+var numberT = 50
+var numberS = 0
+var works = true
+
+
+async function clickDown() {
+
+if (works == true) {
+
+works = false
+bikeSound.currentTime = 6;
+bikeSound.play()
+
+for (var j=0; j < 1250; j++) {
+
+whole.style.opacity = 0
+contacts.style.opacity = 0
+
+numberT -= 3
+
+four.style = "position: relative; top: " + numberT + "px"
+
+await new Promise(resolve => setTimeout(resolve, 1));
+
+}
+
+
+
+four.style.opacity = 0
+
+bikeSound.pause();
+bikeSound.currentTime = 0;
+
+
+
+for (var k = 0; k < 21; k++) {
+
+numberS += 0.05
+
+await new Promise(resolve => setTimeout(resolve, 50));
+
+document.getElementById("WholeId").style = "opacity: " + numberS
+
+document.getElementById("FourthId").style = "position: relative; top: 50px; opacity: " + numberS
+
+document.getElementById("contact").style = "opacity: " + numberS
+
+}
+
+numberT = 50
+numberS = 0
+works = true
+
+
+
+}
+}
+
+</script>
+
+</html>
